@@ -1,5 +1,6 @@
 <?php
-function calculatePrice($basePrice, $taxRate) {
-    // Calculate final price with tax
-    return $basePrice + ($basePrice * $taxRate);
+function calculatePrice($basePrice, $taxRate, $discount = 0) {
+    // Calculate final price with tax and discount
+    $discountedPrice = $basePrice * (1 - $discount);
+    return $discountedPrice + ($discountedPrice * $taxRate);
 }
